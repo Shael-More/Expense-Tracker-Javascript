@@ -8,7 +8,7 @@
 :root {
     --bg-color: #f6f8fa;
     --text-color: #1d1f27;
-    --main-color: #3a3dbe;
+    --main-color: #b1b2e4;
 }
 
 body {
@@ -56,7 +56,7 @@ header div:first-child {
 
 header div:nth-child(n + 2) {
     flex-basis: 50%;
-    font-size: 2.25rem;
+    font-size: 1.25rem;
     font-weight: 500;
 }
 
@@ -107,7 +107,7 @@ form div:nth-child(-n + 2) {
 }
 
 form div:nth-child(n + 3) {
-    flex-basis: calc(50%- 5px);
+    flex-basis: calc(50% - 5px);
 }
 
 input#type {
@@ -139,7 +139,7 @@ input#type {
     top: 5px;
     left: 0;
     background-color: #fff;
-    width: calc(50%- 10px);
+    width: calc(50% - 10px);
     height: calc(100% - 10px);
     transform: translateX(5px);
     border-radius: 5px;

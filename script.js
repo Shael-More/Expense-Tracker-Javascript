@@ -20,6 +20,7 @@ function updateTotal() {
     const incomeTotal = transactions
     .filter(trx => trx.type === "income")
     .reduce((total, trx) => total + trx.amount, 0);
+    
     const expenseTotal = transactions
     .filter(trx => trx.type === "expense")
     .reduce((total, trx) => total + trx.amount, 0);
