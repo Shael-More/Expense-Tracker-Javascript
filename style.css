@@ -76,7 +76,7 @@ form {
  gap: 10px;   
 }
 
-form input,
+form input:not(#type),
 form button {
     width: 100%;
     padding: 10px;
@@ -102,12 +102,53 @@ form label {
     font-weight: 600;
 }
 
-form div:first-child {
+form div:nth-child(-n + 2) {
     flex-basis: 100%;
 }
 
-form div:nth-child(n + 2) {
+form div:nth-child(n + 3) {
     flex-basis: calc(50%- 5px);
+}
+
+input#type {
+    appearance: none;
+    position: absolute;
+}
+
+
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: #eee;
+    border-radius: 5px;
+    position: relative;
+}
+
+.options span {
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.options::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    background-color: #fff;
+    width: calc(50%- 10px);
+    height: calc(100% - 10px);
+    transform: translateX(5px);
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+    transition: all 200ms;
+}
+
+input#type:checked ~ .options::before {
+    left: 50%;
 }
 
 
@@ -117,6 +158,10 @@ ul li {
     align-self: flex-start;
     padding: 5px 10px;
     position: relative;
+}
+
+ul li:hover {
+    background-color: rgba(0,0,0,0.1);
 }
 
 .name {
@@ -146,6 +191,30 @@ ul li {
     color: indianred ;
 }
 
+.action {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #f00;
+    color: #fff;
+    height: 100%;
+    width: 50px;
+    display: grid;
+    place-items: center;
+    transform: scaleX(0);
+    transform-origin: right; 
+    transition: all .3s;
+}
+
+ul li:hover .action {
+    transform: scaleX(1);
+}
+
+.action svg {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+}
 
 #status {
     text-align: center;
